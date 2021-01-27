@@ -16,7 +16,7 @@
 <body>
 
    <section>
-      <div class="container">
+      <div id="byeBye" class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
 
@@ -77,15 +77,15 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5 >$ <span id="subTotal"> 1278</span></h5>
+                        <h5>$ <span id="tax">0</span></h5>
+                        <h5>$<span id="total">1278</span></h5>
                      </div>
 
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button id="checkOutBtn" type="button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
@@ -112,6 +112,12 @@
 
          const phoneCost = currentPhoneCount * 1219;
          document.getElementById('phonePrice').innerText = phoneCost;
+
+
+         const subTotalText = document.getElementById('subTotal').innerText;
+         const total = parseFloat(subTotalText); 
+         const totalPrice = total+1219;
+         document.getElementById('subTotal').innerText = totalPrice;
       });
           // phone minus btn
       document.getElementById('phoneMinusBtn').addEventListener('click',function(){
@@ -124,6 +130,12 @@
          const phonePriceNumber = parseFloat(phonePriceText);
          const phoneCost = phonePriceNumber-1219;
          document.getElementById('phonePrice').innerText = phoneCost;
+
+
+         const subTotalText = document.getElementById('subTotal').innerText;
+         const total = parseFloat(subTotalText); 
+         const totalPrice = total-1219;
+         document.getElementById('subTotal').innerText = totalPrice;
       });
 
       // /////////////////////////////////////////////////////////////////////
@@ -137,6 +149,12 @@
 
          const caseCost = currentCaseCount * 59;
          document.getElementById('casePrice').innerText = caseCost;
+
+         const subTotalText = document.getElementById('subTotal').innerText;
+         const total = parseFloat(subTotalText); 
+         const totalPrice = total+59;
+         document.getElementById('subTotal').innerText = totalPrice;
+
       });
 
           // case minus btn
@@ -150,10 +168,20 @@
          const casePriceNumber = parseFloat(casePriceText);
          const caseCost = casePriceNumber-59;
          document.getElementById('casePrice').innerText = caseCost;
+
+
+         const subTotalText = document.getElementById('subTotal').innerText;
+         const total = parseFloat(subTotalText); 
+         const totalPrice = total-59;
+         document.getElementById('subTotal').innerText = totalPrice;
+
       });
 
 
+      document.getElementById('checkOutBtn').addEventListener('click',function(){
+         document.getElementById('byeBye').style.display = 'none';
 
+      });
 
    </script>
 </body>
