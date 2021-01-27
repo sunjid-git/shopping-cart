@@ -139,9 +139,21 @@
          document.getElementById('casePrice').innerText = caseCost;
       });
 
+          // case minus btn
+          document.getElementById('caseMinusBtn').addEventListener('click',function(){
+         const caseCountText = document.getElementById('caseCount').value;
+         const caseCountNumber = parseFloat(caseCountText);
+         const currentCaseCount  = caseCountNumber - 1;
+         document.getElementById('caseCount').value = currentCaseCount;
+
+         const casePriceText = document.getElementById('casePrice').innerText;
+         const casePriceNumber = parseFloat(casePriceText);
+         const caseCost = casePriceNumber-59;
+         document.getElementById('casePrice').innerText = caseCost;
+      });
 
 
-     
+
 
    </script>
 </body>
